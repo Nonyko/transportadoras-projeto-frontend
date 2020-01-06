@@ -1,0 +1,138 @@
+<form style="padding-left: 8rem; padding-right: 8rem; margin-top: 3rem;" [formGroup]="transportadoraForm">
+    <div class="row">
+        <div class="col-12">
+        <div class="form-group row">
+            <label for="inputemail" class="col-1 col-form-label">Email</label>
+            <div class="col-11">
+                <input type="text" class="form-control form-control" id="inputemail" aria-describedby="emailHelp" placeholder="Insira o email da empresa" formControlName="email">
+                <small id="emailHelp" class="form-text text-muted">Deve ser email valido.</small>
+            </div>                    
+        </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group row">
+                <label for="inputnome"  class="col-1 col-form-label">Nome</label>
+                <div class="col-11">
+                    <input type="text" class="form-control form-control" id="inputnome" aria-describedby="nomeHelp" placeholder="Insira o nome da empresa" formControlName="nome">
+                    <small id="nomeHelp" class="form-text text-muted">Deve ser maior que 4 letras.</small>
+                </div>                        
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group row">
+                <label for="inputcodigo " class="col-1 col-form-label">Empresa</label>
+                <div class="col-11">
+                    <input type="text" class="form-control form-control" id="inputcodigo" aria-describedby="codigoHelp" placeholder="Insira o código da empresa" formControlName="codigo">
+                    <small id="codigoHelp" class="form-text text-muted">Deve ser um código CNPJ.</small>
+                </div>                        
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group row">
+                <label for="inputtelefone" class="col-1 col-form-label">Telefone</label>
+                <div class="col-11">
+                    <input type="text" class="form-control form-control" id="inputtelefone" aria-describedby="telefoneHelp" placeholder="Insira o código da empresa" formControlName="telefone1">
+                    <small id="telefoneHelp" class="form-text text-muted">Deve ser um número de telefone.</small>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group row">
+                <label for="inputcelular" class="col-sm-1 col-form-label">Celular</label>
+                <div class="col-sm-11">
+                    <input type="text" class="form-control form-control" id="inputcelular" aria-describedby="celularHelp" placeholder="Insira o código da empresa" formControlName="telefone2">
+                    <small id="celularHelp" class="form-text text-muted">Deve ser um número de telefone.</small>
+                </div>                        
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group row">
+                <label for="inputwpp" class="col-sm-1 col-form-label">Whatsapp</label>
+                <div class="col-sm-11">
+                    <input type="text" class="form-control form-control" id="inputwpp" aria-describedby="wppHelp" placeholder="Insira o código da empresa" formControlName="whatsapp">
+                    <small id="wppHelp" class="form-text text-muted">Deve ser um número de telefone.</small>
+                </div>                        
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group row">
+                <label for="inputcelular" class="col-sm-1 col-form-label">Modal</label>
+                <div class="col-sm-11">
+                    <select class="form-control form-control" multiple id="selectmodal"  aria-describedby="modalHelp" placeholder="Selecione modal" formControlName="modal">
+                        <option value="RODOVIARIO">RODOVIARIO</option>
+                        <option value="AEREO">AEREO</option>
+                        <option value="AQUAVIARIO">AQUAVIARIO</option>
+                    </select>
+                </div>                        
+            </div>
+        </div>
+        <div class="col-7">
+            <div class="form-group row">
+                <label for="inputcep" class="col-sm-2 col-form-label">Cep</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control form-control" id="inputcep" aria-describedby="cepHelp" placeholder="Insira o cep" formControlName="cep">
+                    <small id="cepHelp" class="form-text text-muted">Insira um endereço de cep</small>
+                </div>                        
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="form-group row">
+                <label for="inputwpp" class="col-sm-6 col-form-label">Estado</label>
+                <div class="col-sm-6">
+                    <select let estados from  class="form-control form-control" id="selectmodal" (change)="changedEstadoValue($event.target.value)"  aria-describedby="modalHelp" placeholder="Selecione uf" formControlName="estado">
+                        <option *ngFor="let estado of listaEstados" [value]="estado.sigla">{{estado.nome}}</option>
+                    </select></div>                        
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group row">                       
+                <label for="inputcidade" class="col-sm-1 col-form-label">Cidade</label>
+                <div class="col-sm-11">
+                    <select let estados from  class="form-control form-control" id="selectmodal"  aria-describedby="modalHelp" placeholder="Selecione uf" formControlName="cidade">
+                        <option *ngFor="let cidade of listaCidades" [value]="cidade?.nome">{{cidade?.nome}}</option>
+                    </select> <small id="cidadeHelp" class="form-text text-muted">Insira a cidade</small>
+                </div>                        
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group row">                       
+                <label for="inputbairro" class="col-sm-1 col-form-label">Bairro</label>
+                <div class="col-sm-11">
+                    <input type="text" class="form-control form-control" id="inputbairro" aria-describedby="bairroHelp" placeholder="Insira o bairro" formControlName="bairro">
+                    <small id="bairroHelp" class="form-text text-muted">Insira o bairro</small>
+                </div>                        
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group row">                       
+                <label for="inputrua" class="col-sm-1 col-form-label">Rua/Avenida</label>
+                <div class="col-sm-11">
+                    <input type="text" class="form-control form-control" id="inputrua" aria-describedby="ruaHelp" placeholder="Insira a rua" formControlName="rua">
+                    <small id="ruaHelp" class="form-text text-muted">Insira um endereço de cep</small>
+                </div>                        
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group row">                       
+                <label for="inputnumero" class="col-sm-1 col-form-label">Número</label>
+                <div class="col-sm-11">
+                    <input type="number" class="form-control form-control" id="inputnumero" aria-describedby="numeroHelp" placeholder="Insira o número" formControlName="numero">
+                    <small id="numeroHelp" class="form-text text-muted">Insira o número</small>
+                </div>                        
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group row">                       
+                <label for="inputlogo" class="col-sm-1 col-form-label">Logo</label>
+                <div class="col-sm-11">
+                    <input type="file" class="form-control form-control" id="inputlogo" aria-describedby="logoHelp" placeholder="Insira o logo">
+                    <small id="logoHelp" class="form-text text-muted">Insira o logo</small>
+                </div>                        
+            </div>
+        </div>
+    </div>
+    <button hidden type="button" class="btn btn-primary" (click)=submit() [disabled]="transportadoraForm.invalid">Salvar mudanças</button>
+    <button hidden type="button" class="btn btn-danger" (click)=submit()>Deletar</button>
+
+</form>

@@ -1,0 +1,33 @@
+
+<div class="row my-1">
+    <!--LOGO, NOME E CODIGO-->
+    <div class=col-4>
+        <div class="row">
+            <div class=col-3><img src="https://via.placeholder.com/70"/></div>
+            <div class="col-9 txt-centered-outside-card" >
+                <div class="txt-centered-inside-card">
+                    <p id="transportadora-nome"><a href="#" routerLink="atualizar-transportadora" [state]="{transportadora: transportadora}">{{transportadora.nome}}</a></p>
+                    <p id="transportadora-codigo">{{transportadora.codigo}}</p>
+                </div>               
+            </div>
+        </div>    
+    </div>
+    <!--FIM LOGO, NOME E CODIGO-->
+
+    <!--CONTATOS-->
+    <div class="col-4  txt-centered-outside-card">
+        <div class="txt-centered-inside-card">
+            <p id="transportadora-telefones">{{transportadora.telefone1}} {{transportadora.telefone2}}</p>
+            <p id="transportadora-email">{{transportadora.email}}</p>
+        </div>         
+    </div>
+    <!--FIM CONTATOS-->
+
+    <!--WHATSAPP-->
+    <div class=col-4>
+        <img src="https://via.placeholder.com/20"/>
+        {{transportadora.whatsapp}}
+    </div>
+    <!--FIM WHATSAPP-->
+    
+</div>

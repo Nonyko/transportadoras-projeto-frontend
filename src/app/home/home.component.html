@@ -1,0 +1,21 @@
+
+<div class="row m-0">
+   
+    <div id="sidebar" class="col-3">
+        <app-sidebar (filtrosEmitter)="filtrosEmitterListener($event)" [quantidadeResultados]="totalelements" ></app-sidebar>
+    </div>
+    <div id="content" class="col-9 p-5">
+        <app-displaycardstransportadoras [transportadoras]="transportadoras"></app-displaycardstransportadoras>
+     
+
+        <nav aria-label="Page navigation">
+            <ul class="pagination">          
+              <li class="page-item " [ngClass]="{'active': i==atualpage }" *ngFor='let loop of counter(totalpages) ;let i= index' >                
+                  <a class="page-link" href="#" *ngIf="i==atualpage;" >{{i+1}}</a>
+                  <a (click)="atualizarListagem(i)" class="page-link" href="#" *ngIf="i!=atualpage;" >{{i+1}}</a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</div>

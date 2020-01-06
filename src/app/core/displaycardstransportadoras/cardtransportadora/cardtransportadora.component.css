@@ -1,0 +1,22 @@
+.txt-centered-outside-card{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.txt-centered-inside-card #transportadora-nome{
+    margin:0em;
+}
+
+.txt-centered-inside-card #transportadora-codigo{
+    line-height: 0.5em;
+}
+
+.txt-centered-inside-card #transportadora-telefones{
+    font-weight: bolder;
+    margin:0em;
+}
+.txt-centered-inside-card #transportadora-email{
+    line-height: 0.8em;
+}

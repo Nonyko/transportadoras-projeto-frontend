@@ -1,0 +1,29 @@
+<div class="p-3">
+    <h6>Transportadoras</h6>
+    <p class="small">{{quantidadeResultados}} resultados</p>
+    <div *ngFor="let filtro of filtrosSelecionados">
+        <button (click)=removefiltro(filtro) class="btn btn-sm btn-primary py-0">{{filtro.nome}} x</button>   
+    </div>
+    <hr/>
+
+    <h6>Nome</h6>
+    <div>
+        <input (keyup.enter)="addFiltroNome($event)" type="text" class="form-control form-control" id="inputnome" placeholder="Nome da empresa">                    
+       
+    </div>
+
+    <h6>Localização (UFs)</h6>
+    <div *ngFor="let filtro of filtrosEstados">
+        <a href="#" (click)=addfiltro(filtro)>{{filtro.nome}} ({{filtro.quantidade}})</a>        
+    </div>
+    
+    <h6>Localização (Municípios)</h6>
+    <div *ngFor="let filtro of filtrosMunicipios">
+        <a href="#" (click)=addfiltro(filtro)>{{filtro.nome}} ({{filtro.quantidade}})</a>
+    </div>
+    
+    <h6>Modal</h6>
+    <div *ngFor="let filtro of filtrosModalidade">
+        <a href="#" (click)=addfiltro(filtro)>{{filtro.nome}} ({{filtro.quantidade}})</a>        
+    </div>
+</div>

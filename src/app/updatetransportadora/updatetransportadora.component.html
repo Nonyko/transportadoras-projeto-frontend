@@ -1,0 +1,23 @@
+<div class="m-2">
+    <app-transportadoraform (formEmitter)="formEmitterListener($event)"></app-transportadoraform>
+    <button class="btn btn-primary" type="button" (click)="submitForm()" [disabled]="formulario?.transportadoraForm?.invalid">
+        Salvar mudanças
+    </button>
+
+    <button class="btn btn-danger" type="button" (click)=open() >
+        Deletar Transportadora
+    </button>
+    <app-modal titulo="Criar Transportadora" [display]="display" [overflow]="overflow">
+        <div class="m-2">
+           <p>Deseja realmente <b>DELETAR</b> essa transportadora?</p>
+        </div>
+    
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" (click)=delete(id)>Deletar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)=close()>Cancelar</button>        
+        </div>
+    
+    </app-modal>
+
+</div>
+

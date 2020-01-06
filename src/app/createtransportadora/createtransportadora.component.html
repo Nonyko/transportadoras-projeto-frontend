@@ -1,0 +1,9 @@
+
+<div class="m-2">
+    <app-transportadoraform (formEmitter)="formEmitterListener($event)"></app-transportadoraform>
+    <button class="btn btn-primary" type="button" (click)="submitForm()" [disabled]="formulario?.transportadoraForm?.invalid">
+        Salvar mudanças
+    </button>
+
+</div>
+
